@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/xyproto/browserspeak"
 	"github.com/xyproto/genericsite"
 	"github.com/xyproto/instapage"
@@ -18,15 +16,6 @@ func hello(val string) string {
 
 func helloHandle(ctx *web.Context, name string) string {
 	return "Hello, " + name
-}
-
-func Hello() string {
-	msg := "Hi"
-	return instapage.Message("Hello", msg)
-}
-
-func ParamExample(ctx *web.Context) string {
-	return fmt.Sprintf("%v\n", ctx.Params)
 }
 
 func notFound2(ctx *web.Context, val string) {
@@ -78,7 +67,7 @@ func main() {
 	web.Get("/errors", browserspeak.GenerateErrorHandle("errors.err"))
 
 	// Various .php and .asp urls that showed up in the log
-	ServeForFun()
+	genericsite.ServeForFun()
 
 	// TODO: Incorporate this check into web.go, to only return
 	// stuff in the header when the HEAD method is requested:
