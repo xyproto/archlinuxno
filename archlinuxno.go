@@ -50,7 +50,7 @@ func ServeEngines(userState *genericsite.UserState, mainMenuEntries genericsite.
 	//blogEngine.ServePages(ArchBaseCP, mainMenuEntries)
 }
 
-// TODO: Caching, login
+// TODO: One database per site
 func main() {
 
 	// UserState with a Redis Connection Pool
