@@ -30,7 +30,7 @@ while true; do
     clear
     date
     echo
-    echo -n 'Recompiling...'
+    echo -n 'Recompiling archlinux.no...'
     [ -e $LOG ] && rm $LOG
     go build -o $BIN > $LOG
     if [ "$(wc -c $LOG | cut -d' ' -f1)" == '0' ]; then
