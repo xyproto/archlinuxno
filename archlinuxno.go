@@ -26,7 +26,7 @@ func notFound2(ctx *web.Context, val string) {
 func ServeEngines(userState *genericsite.UserState, mainMenuEntries genericsite.MenuEntries) {
 	// The user engine
 	userEngine := siteengines.NewUserEngine(userState)
-	userEngine.ServePages()
+	userEngine.ServePages("archlinux.no")
 
 	// The admin engine
 	adminEngine := siteengines.NewAdminEngine(userState)
