@@ -1,15 +1,13 @@
-# For debugging purposes
-# TODO: Fix
-
 [Unit]
-Description=ArchLinux.no server (development)
+Description=archlinux.no development server
 
 [Service]
+Type=simple
 User=alexander
-ExecStart=/home/alexander/checkout/archlinuxno/archweb
-ExecReload=/bin/kill -HUP $MAINPID
-KillSignal=SIGQUIT
-Restart=always
+ExecStart=/home/alexander/go/src/github.com/xyproto/archlinuxno/compileloop.sh &
+WorkingDirectory=/home/alexander/go/src/github.com/xyproto/archlinuxno
+PIDFile=/tmp/archweb.pid
+Environment=GOPATH=/home/alexander/go
 
 [Install]
 WantedBy=multi-user.target
