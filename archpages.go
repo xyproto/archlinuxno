@@ -7,7 +7,7 @@ import (
 	. "github.com/xyproto/browserspeak"
 	. "github.com/xyproto/genericsite"
 	. "github.com/xyproto/siteengines"
-	"github.com/xyproto/web"
+	"github.com/hoisie/web"
 )
 
 // The default settings for Arch Linux content pages
