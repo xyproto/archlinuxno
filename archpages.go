@@ -4,10 +4,10 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/hoisie/web"
 	. "github.com/xyproto/browserspeak"
 	. "github.com/xyproto/genericsite"
 	. "github.com/xyproto/siteengines"
-	"github.com/hoisie/web"
 )
 
 // The default settings for Arch Linux content pages

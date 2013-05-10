@@ -1,11 +1,11 @@
 package main
 
 import (
+	"github.com/hoisie/web"
 	"github.com/xyproto/browserspeak"
 	"github.com/xyproto/genericsite"
 	"github.com/xyproto/instapage"
 	"github.com/xyproto/siteengines"
-	"github.com/hoisie/web"
 )
 
 const JQUERY_VERSION = "2.0.0"
