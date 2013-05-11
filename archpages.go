@@ -54,8 +54,9 @@ func ArchBaseTitleCP(contentTitle string, userState *UserState) *ContentPage {
 
 func OverviewCP(userState *UserState, url string) *ContentPage {
 	cp := ArchBaseCP(userState)
-	cp.ContentTitle = "Overview"
-	cp.ContentHTML = `This site is currently under construction.<br />Visit the <a href="https://bbs.archlinux.org/viewtopic.php?id=4998">Arch Linux Forum</a> in the meantime.<br /><br /><i>- Alexander Rødseth &lt;rodseth / gmail&gt;</i>`
+	cp.ContentTitle = "Arch Linux Norway"
+	//cp.ContentHTML = `This site is currently under construction.<br />Visit the <a href="https://bbs.archlinux.org/viewtopic.php?id=4998">Arch Linux Forum</a> in the meantime.<br /><br /><i>- Alexander Rødseth &lt;rodseth / gmail&gt;</i>`
+	cp.ContentHTML = `<img src="https://si0.twimg.com/profile_images/71498752/arch-linux-logo.png">`
 	cp.Url = url
 	return cp
 }
