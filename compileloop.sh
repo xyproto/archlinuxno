@@ -1,4 +1,6 @@
 #!/bin/sh
+echo 'Sleeping for 3 seconds...'
+sleep 3
 SOURCE=
 for f in *.go ../browserspeak/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go; do
   SOURCE+="$f "
