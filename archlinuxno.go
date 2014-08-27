@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/hoisie/web"
-	"github.com/xyproto/browserspeak"
 	"github.com/xyproto/genericsite"
 	"github.com/xyproto/instapage"
 	"github.com/xyproto/siteengines"
+	"github.com/xyproto/webhandle"
 )
 
 const JQUERY_VERSION = "2.0.0"
@@ -20,7 +20,7 @@ func helloHandle(ctx *web.Context, name string) string {
 
 func notFound2(ctx *web.Context, val string) {
 	ctx.ResponseWriter.WriteHeader(404)
-	ctx.ResponseWriter.Write([]byte(browserspeak.NotFound(ctx, val)))
+	ctx.ResponseWriter.Write([]byte(webhandle.NotFound(ctx, val)))
 }
 
 func ServeEngines(userState *genericsite.UserState, mainMenuEntries genericsite.MenuEntries) {
@@ -63,8 +63,8 @@ func main() {
 	ServeEngines(userState, mainMenuEntries)
 
 	// Compilation errors, vim-compatible filename
-	web.Get("/error", browserspeak.GenerateErrorHandle("errors.err"))
-	web.Get("/errors", browserspeak.GenerateErrorHandle("errors.err"))
+	web.Get("/error", webhandle.GenerateErrorHandle("errors.err"))
+	web.Get("/errors", webhandle.GenerateErrorHandle("errors.err"))
 
 	// Various .php and .asp urls that showed up in the log
 	genericsite.ServeForFun()
