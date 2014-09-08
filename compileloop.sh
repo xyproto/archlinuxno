@@ -2,7 +2,7 @@
 echo 'Sleeping for 3 seconds...'
 sleep 3
 SOURCE=
-for f in *.go ../browserspeak/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
+for f in *.go ../onthefly/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
   SOURCE+="$f "
 done
 BIN=archweb
