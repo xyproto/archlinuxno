@@ -4,6 +4,7 @@ import (
 	"github.com/hoisie/web"
 	"github.com/xyproto/genericsite"
 	"github.com/xyproto/instapage"
+	"github.com/xyproto/permissions"
 	"github.com/xyproto/siteengines"
 	"github.com/xyproto/webhandle"
 )
@@ -23,7 +24,7 @@ func notFound2(ctx *web.Context, val string) {
 	ctx.ResponseWriter.Write([]byte(webhandle.NotFound(ctx, val)))
 }
 
-func ServeEngines(userState *genericsite.UserState, mainMenuEntries genericsite.MenuEntries) {
+func ServeEngines(userState *permissions.UserState, mainMenuEntries genericsite.MenuEntries) {
 	// The user engine
 	userEngine := siteengines.NewUserEngine(userState)
 	userEngine.ServePages("archlinux.no")
@@ -54,7 +55,7 @@ func ServeEngines(userState *genericsite.UserState, mainMenuEntries genericsite.
 func main() {
 
 	// UserState with a Redis Connection Pool
-	userState := genericsite.NewUserState(0)
+	userState := permissions.NewUserState(0, true, ":6379")
 	defer userState.Close()
 
 	// The archlinux.no webpage,
