@@ -11,6 +11,10 @@ import (
 	. "github.com/xyproto/siteengines"
 )
 
+const (
+	author = "Alexander F Rødseth"
+)
+
 // The default settings for Arch Linux content pages
 func ArchBaseCP(state *permissions.UserState) *ContentPage {
 	cp := DefaultCP(state)
@@ -20,7 +24,7 @@ func ArchBaseCP(state *permissions.UserState) *ContentPage {
 	y := time.Now().Year()
 
 	// TODO: Use templates for the footer, for more accurate measurment of the time made to generate the page
-	cp.FooterText = "Alexander Rødseth, " + strconv.Itoa(y)
+	cp.FooterText = author + ", " + strconv.Itoa(y)
 
 	cp.Url = "/" // Is replaced when the contentpage is published
 
