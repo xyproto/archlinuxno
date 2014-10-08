@@ -1,8 +1,8 @@
 #!/bin/sh
-echo 'Sleeping for 3 seconds...'
-sleep 3
+#echo 'Sleeping for 3 seconds...'
+#sleep 3
 SOURCE=
-for f in *.go ../onthefly/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
+for f in *.go; do ../onthefly/*.go ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
   SOURCE+="$f "
 done
 BIN=archweb
@@ -32,7 +32,7 @@ while true; do
     clear
     date
     echo
-    echo -n 'Recompiling archlinux.no...'
+    echo -n 'Recompiling archlinux.no server...'
     [ -e $LOG ] && rm $LOG
     go build -o $BIN > $LOG
     if [ "$(wc -c $LOG | cut -d' ' -f1)" == '0' ]; then
