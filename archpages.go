@@ -147,7 +147,7 @@ func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 		"Admin:/admin",
 		"Chat:/chat",
 		"Wiki:/wiki",
-		"Text:/text",
+		//"Text:/text",
 	}
 	//for _, cp := range cps {
 	//	text_and_url := cp.ContentTitle + ":" + cp.Url
