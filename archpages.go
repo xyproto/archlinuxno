@@ -161,7 +161,7 @@ func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 func ServeArchlinuxNo(userState *permissions.UserState, jquerypath string) MenuEntries {
 	cps := []ContentPage{
 		*OverviewCP(userState, "/"),
-		*TextCP(userState, "/text"),
+		//*TextCP(userState, "/text"),
 		*JQueryCP(userState, "/jquery"),
 		*BobCP(userState, "/bob"),
 		*CountCP(userState, "/counting"),
