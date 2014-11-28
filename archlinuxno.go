@@ -56,7 +56,7 @@ func main() {
 
 	// UserState with a Redis Connection Pool
 	userState := permissions.NewUserState(0, true, ":6379")
-	userState.SetPasswordAlgo("sha256")
+	//userState.SetPasswordAlgo("bcrypt")
 
 	defer userState.Close()
 
