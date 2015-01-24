@@ -1,3 +1,4 @@
+// First attempt at a home grown webpage for archlinux.no
 package main
 
 import (
