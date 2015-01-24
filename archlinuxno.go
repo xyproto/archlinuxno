@@ -5,7 +5,7 @@ import (
 	"github.com/hoisie/web"
 	"github.com/xyproto/genericsite"
 	"github.com/xyproto/instapage"
-	"github.com/xyproto/permissions"
+	"github.com/xyproto/permissions2"
 	"github.com/xyproto/siteengines"
 	"github.com/xyproto/webhandle"
 )
@@ -25,7 +25,7 @@ func notFound2(ctx *web.Context, val string) {
 	ctx.ResponseWriter.Write([]byte(webhandle.NotFound(ctx, val)))
 }
 
-func ServeEngines(userState *permissions.UserState, mainMenuEntries genericsite.MenuEntries) {
+func ServeEngines(userState permissions.UserStateKeeper, mainMenuEntries genericsite.MenuEntries) {
 	// The user engine
 	userEngine := siteengines.NewUserEngine(userState)
 	userEngine.ServePages("archlinux.no")
@@ -57,6 +57,7 @@ func main() {
 
 	// UserState with a Redis Connection Pool
 	userState := permissions.NewUserState(0, true, ":6379")
+
 	defer userState.Close()
 
 	// The archlinux.no webpage,
@@ -76,6 +77,6 @@ func main() {
 	// if ctx.Request.Method == "HEAD" { return }
 	// See also: curl -I
 
-	// Serve on port 3000 for the Nginx instance to use
-	web.Run("0.0.0.0:3000")
+	// Serve on port 3009 for the Nginx instance to use
+	web.Run("0.0.0.0:3009")
 }

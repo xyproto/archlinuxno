@@ -7,7 +7,7 @@ import (
 	"github.com/hoisie/web"
 	. "github.com/xyproto/genericsite"
 	. "github.com/xyproto/onthefly"
-	"github.com/xyproto/permissions"
+	"github.com/xyproto/permissions2"
 	. "github.com/xyproto/siteengines"
 )
 
@@ -16,7 +16,7 @@ const (
 )
 
 // The default settings for Arch Linux content pages
-func ArchBaseCP(state *permissions.UserState) *ContentPage {
+func ArchBaseCP(state permissions.UserStateKeeper) *ContentPage {
 	cp := DefaultCP(state)
 	cp.Title = "Arch Linux"
 	cp.Subtitle = "no"
@@ -51,13 +51,13 @@ func ArchBaseCP(state *permissions.UserState) *ContentPage {
 }
 
 // Returns a ArchBaseCP with the contentTitle set
-func ArchBaseTitleCP(contentTitle string, userState *permissions.UserState) *ContentPage {
+func ArchBaseTitleCP(contentTitle string, userState permissions.UserStateKeeper) *ContentPage {
 	cp := ArchBaseCP(userState)
 	cp.ContentTitle = contentTitle
 	return cp
 }
 
-func OverviewCP(userState *permissions.UserState, url string) *ContentPage {
+func OverviewCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	cp := ArchBaseCP(userState)
 	cp.ContentTitle = "Arch Linux Norway"
 	//cp.ContentHTML = `This site is currently under construction.<br />Visit the <a href="https://bbs.archlinux.org/viewtopic.php?id=4998">Arch Linux Forum</a> in the meantime.<br /><br /><i>- Alexander Rødseth &lt;rodseth / gmail&gt;</i>`
@@ -66,7 +66,7 @@ func OverviewCP(userState *permissions.UserState, url string) *ContentPage {
 	return cp
 }
 
-func MirrorsCP(userState *permissions.UserState, url string) *ContentPage {
+func MirrorsCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	cp := ArchBaseCP(userState)
 	cp.ContentTitle = "Mirrors"
 	cp.ContentHTML = "List over Norwegian Arch Linux mirrors:"
@@ -74,7 +74,7 @@ func MirrorsCP(userState *permissions.UserState, url string) *ContentPage {
 	return cp
 }
 
-func CountCP(userState *permissions.UserState, url string) *ContentPage {
+func CountCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	apc := ArchBaseCP(userState)
 	apc.ContentTitle = "Counting"
 	apc.ContentHTML = "1 2 3"
@@ -82,7 +82,7 @@ func CountCP(userState *permissions.UserState, url string) *ContentPage {
 	return apc
 }
 
-func BobCP(userState *permissions.UserState, url string) *ContentPage {
+func BobCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	apc := ArchBaseCP(userState)
 	apc.ContentTitle = "Bob"
 	if userState.HasUser("bob") {
@@ -99,7 +99,7 @@ func BobCP(userState *permissions.UserState, url string) *ContentPage {
 	return apc
 }
 
-func JQueryCP(userState *permissions.UserState, url string) *ContentPage {
+func JQueryCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	apc := ArchBaseCP(userState)
 	apc.ContentTitle = "JQuery"
 
@@ -120,7 +120,7 @@ func JQueryCP(userState *permissions.UserState, url string) *ContentPage {
 	return apc
 }
 
-func TextCP(userState *permissions.UserState, url string) *ContentPage {
+func TextCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	apc := ArchBaseCP(userState)
 	apc.ContentTitle = "YOLO narwhal"
 	apc.ContentHTML = `<p>Locavore Austin fanny pack pickled.  Marfa hoodie pitchfork american apparel, flexitarian YOLO pickled keytar twee cred craft beer seitan authentic raw denim kogi.  Selvage mixtape blog, pickled cosby sweater williamsburg skateboard brooklyn lo-fi twee.  Blue bottle echo park kale chips, selvage fap skateboard swag chambray tousled.  Street art etsy four loko fap, iphone carles cliche banh mi fashion axe PBR authentic leggings.  Narwhal mumblecore street art tumblr.  Messenger bag vice art party, next level aesthetic church-key tumblr direct trade  typewriter street art.</p><p>Messenger bag blue bottle VHS before they sold out.  Artisan pickled swag, VHS meggings jean shorts blog tonx salvia cosby sweater mumblecore aesthetic literally narwhal.  Brunch tofu gluten-free disrupt blog occupy.  Austin bicycle rights sartorial narwhal, butcher trust fund cred.  Neutra kale chips letterpress literally, williamsburg kogi brunch bicycle rights.  Williamsburg craft beer brunch quinoa, forage YOLO swag put a bird on it four loko mixtape banksy.  Tumblr semiotics yr fixie.</p><p>Iphone banksy wolf squid wayfarers, VHS photo booth banh mi fap.  Tonx flexitarian vinyl scenester terry richardson squid synth deep v.  VHS tousled godard, cardigan american apparel lo-fi flannel.  Vice church-key cliche, hashtag banh mi direct trade  skateboard.  Sriracha meh pitchfork, wayfarers helvetica leggings try-hard viral YOLO lo-fi fingerstache synth ennui next level ugh.  Wayfarers organic american apparel fingerstache craft beer bicycle rights, beard keffiyeh banksy four loko butcher hashtag mumblecore banjo wes anderson.  Williamsburg next level deep v pickled typewriter kogi.</p><p>Meggings gastropub flexitarian, before they sold out DIY wes anderson cred authentic artisan dreamcatcher aesthetic ennui food truck.  Fanny pack selvage synth vegan pug.  YOLO shoreditch pitchfork, letterpress whatever put a bird on it truffaut mumblecore flannel terry richardson irony cray master cleanse ethnic gluten-free.  Fap banksy blog pickled meh ethnic food truck +1, vice leggings retro quinoa.  Small batch vice pop-up mustache.  +1 ethnic echo park semiotics letterpress raw denim.  Keytar photo booth wes anderson, freegan before they sold out skateboard seitan brooklyn.</p><p>Wes anderson high life banksy messenger bag art party plaid disrupt tattooed, next level swag viral raw denim.  Cliche meggings terry richardson cray.  Next level 3 wolf moon retro marfa.  Pork belly authentic banjo, iphone lomo williamsburg letterpress cosby sweater Austin typewriter quinoa skateboard hoodie.  Plaid kale chips godard farm-to-table.  Fashion axe mixtape freegan, pop-up chambray ugh etsy YOLO jean shorts dreamcatcher meggings.  Banh mi letterpress tousled, skateboard stumptown high life vegan fap typewriter shoreditch 8-bit lo-fi master cleanse selfies bespoke.</p>`
@@ -128,7 +128,7 @@ func TextCP(userState *permissions.UserState, url string) *ContentPage {
 	return apc
 }
 
-func HelloCP(userState *permissions.UserState, url string) *ContentPage {
+func HelloCP(userState permissions.UserStateKeeper, url string) *ContentPage {
 	apc := ArchBaseCP(userState)
 	apc.ContentTitle = "This is it"
 	apc.Url = url
@@ -147,7 +147,7 @@ func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 		"Admin:/admin",
 		"Chat:/chat",
 		"Wiki:/wiki",
-		"Text:/text",
+		//"Text:/text",
 	}
 	//for _, cp := range cps {
 	//	text_and_url := cp.ContentTitle + ":" + cp.Url
@@ -161,7 +161,7 @@ func Cps2MenuEntries(cps []ContentPage) MenuEntries {
 func ServeArchlinuxNo(userState *permissions.UserState, jquerypath string) MenuEntries {
 	cps := []ContentPage{
 		*OverviewCP(userState, "/"),
-		*TextCP(userState, "/text"),
+		//*TextCP(userState, "/text"),
 		*JQueryCP(userState, "/jquery"),
 		*BobCP(userState, "/bob"),
 		*CountCP(userState, "/counting"),

@@ -11,6 +11,6 @@ Crawl-delay: 5
 Disallow: /tmp/
 Disallow: *~
 Allow: /
-Sitemap: http://archlinux.no/sitemap_index.xml
+#Sitemap: http://archlinux.no/sitemap_index.xml
 
 # a snowman ☃
