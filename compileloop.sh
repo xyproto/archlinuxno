@@ -3,7 +3,7 @@
 #sleep 3
 SOURCE=
 for f in *.go; do
-# ../genericsite/*.go ../instapage/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
+# ../genericsite/*.go ../simpleredis/*.go ../siteengines/*.go ../webhandle/*.go; do
   SOURCE+="$f "
 done
 BIN=archweb
