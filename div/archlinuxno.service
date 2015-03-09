@@ -8,6 +8,7 @@ ExecStart=/home/alexander/go/src/github.com/xyproto/archlinuxno/compileloop.sh &
 WorkingDirectory=/home/alexander/go/src/github.com/xyproto/archlinuxno
 PIDFile=/tmp/archweb.pid
 Environment=GOPATH=/home/alexander/go
+After=redis.service
 
 [Install]
 WantedBy=multi-user.target
