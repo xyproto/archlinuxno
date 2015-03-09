@@ -1,9 +1,9 @@
+// First attempt at a home grown webpage for archlinux.no
 package main
 
 import (
 	"github.com/hoisie/web"
 	"github.com/xyproto/genericsite"
-	"github.com/xyproto/instapage"
 	"github.com/xyproto/permissions2"
 	"github.com/xyproto/siteengines"
 	"github.com/xyproto/webhandle"
@@ -12,7 +12,7 @@ import (
 const JQUERY_VERSION = "2.0.0"
 
 func hello(val string) string {
-	return instapage.Message("root page", "hello: "+val)
+	return webhandle.Message("root page", "hello: "+val)
 }
 
 func helloHandle(ctx *web.Context, name string) string {
