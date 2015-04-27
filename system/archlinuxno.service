@@ -1,5 +1,7 @@
 [Unit]
 Description=archlinux.no development server
+Requires=redis.service
+After=redis.service
 
 [Service]
 Type=simple
